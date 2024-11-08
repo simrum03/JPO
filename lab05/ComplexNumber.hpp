@@ -10,6 +10,20 @@ private:
 public:
     ComplexNumber(double r = 0.0, double i = 0.0) : m_real(r), m_imag(i) {}
 
+    void setReal(double real){
+        m_real = real;
+    }
+    void setImag(double imag){
+        m_imag = imag;
+    }
+
+    double getReal() const {
+        return m_real;
+    }
+    double getImag() const {
+        return m_imag;
+    }
+
 
     ComplexNumber operator+(const ComplexNumber& other) const {
         return ComplexNumber(m_real + other.m_real, m_imag + other.m_imag);
@@ -56,7 +70,7 @@ public:
     }
 
     bool operator!=(const ComplexNumber& other) const {
-        return !(*this == other);
+        return !operator==(other);
     }
 
     ComplexNumber& operator=(const ComplexNumber& other) {
